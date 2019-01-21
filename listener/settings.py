@@ -1,4 +1,4 @@
-SEARCH_TERMS = ["bumbler", "tinder", "coffee meets bagel", "jswipe"]
+SEARCH_TERMS = ["bumble", "tinder", "coffee meets bagel", "jswipe"]
 
 QUERY_INSERT = '''
     INSERT INTO twitter_sentiment.dating_apps
