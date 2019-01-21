@@ -1,2 +1,0 @@
-TRACK_TERMS = ["$AAPL", "$GOOG","$TSLA","$FB","$BABA","$TWTR","$SNAP","$AMZN","$EBAY","$JD","$JPM"]
-QUERY_INSERT = '''INSERT INTO twitter_sentiment.test_data (run_id, id_str, user_screen_name, user_created_at, user_location, user_description, user_followers, tweet_date, tweet_text) VALUES (%(run_id)s,%(id_str)s,%(user_screen_name)s,%(user_created_at)s, %(user_location)s, %(user_description)s,%(user_followers)s,%(tweet_date)s,%(tweet_text)s)'''
