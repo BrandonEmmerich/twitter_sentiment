@@ -3,6 +3,7 @@ import private
 import settings
 import time
 import tweepy
+from urllib3.exceptions import ProtocolError
 
 
 class StandardListner(tweepy.StreamListener):
@@ -58,4 +59,8 @@ if __name__ == '__main__':
         auth = tweepy.OAuthHandler(private.CONSUMER_KEY, private.CONSUMER_SECRET)
         auth.set_access_token(private.ACCESS_TOKEN_KEY, private.ACCESS_TOKEN_SECRET)
         stream = tweepy.Stream(auth, listener)
-        stream.filter(track=settings.SEARCH_TERMS)
+        while True:
+            try:
+                stream.filter(track=settings.SEARCH_TERMS)
+            except ProtocolError:
+                continue
